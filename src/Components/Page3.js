@@ -38,7 +38,7 @@ function Page3(props) {
                         </div>
                         <div className='col-6 mt-4'>
                             <div className="input-group mb-3">
-                                <input type="text" required className="form-control br-0" minLength="1" maxLength="100" placeholder="Link" 
+                                <input type="text" required className="form-control br-0" minLength="1" placeholder="Link" 
                                 value={projects.project1Link} onChange={(event) => setprojects({ ...projects, 'project1Link': event.target.value })}/>
                                 <div className="input-group-append">
                                     <span className="input-group-text" id="basic-addon2">
@@ -49,7 +49,7 @@ function Page3(props) {
                         </div>
                         <div className='col-12'>
                             <div className="input-group w-100 description mb-4 h-4">
-                                <input type="text" required className="form-control br-0" minLength="1" maxLength="450" placeholder="Description *" 
+                                <input type="text" required className="form-control br-0" minLength="1" placeholder="Description *" 
                                 value={projects.project1Decsription} onChange={(event) => setprojects({ ...projects, 'project1Decsription': event.target.value })}/>
                                 <div className="input-group-append">
                                     <span className="input-group-text" id="basic-addon2">
@@ -61,7 +61,7 @@ function Page3(props) {
                         <p className='text-center m-0'>Project 2</p>
                         <div className='col-6 mt-4'>
                             <div className="input-group mb-3">
-                                <input type="text" required className="form-control br-0" minLength="1" maxLength="100"  placeholder="Title" 
+                                <input type="text" required className="form-control br-0" minLength="1"  placeholder="Title" 
                                 value={projects.project2Title} onChange={(event) => setprojects({ ...projects, 'project2Title': event.target.value })}/>
                                 <div className="input-group-append">
                                     <span className="input-group-text" id="basic-addon2">
@@ -72,7 +72,7 @@ function Page3(props) {
                         </div>
                         <div className='col-6 mt-4'>
                             <div className="input-group mb-3">
-                                <input type="text" required className="form-control br-0" minLength="1" maxLength="100" placeholder="Link" 
+                                <input type="text" required className="form-control br-0" minLength="1" placeholder="Link" 
                                 value={projects.project2Link} onChange={(event) => setprojects({ ...projects, 'project2Link': event.target.value })}/>
                                 <div className="input-group-append">
                                     <span className="input-group-text" id="basic-addon2">
@@ -83,7 +83,7 @@ function Page3(props) {
                         </div>
                         <div className='col-12'>
                             <div className="input-group description w-100 mb-3">
-                                <input type="text" required className="form-control br-0" minLength="1" maxLength="450"  placeholder="Decsription" 
+                                <input type="text" required className="form-control br-0" minLength="1" placeholder="Decsription" 
                                 value={projects.project2Decsription} onChange={(event) => setprojects({ ...projects, 'project2Decsription': event.target.value })}/>
                                 <div className="input-group-append">
                                     <span className="input-group-text" id="basic-addon2">

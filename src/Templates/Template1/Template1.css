@@ -22,13 +22,13 @@
   /* width: 100%; */
   /* width: 1351px; */
   width: 1140px;
-  height: 1618px;
-  min-height: 1023px;
-  max-height: 1618px;
+  /* height: 1618px; */
+  /* min-height: 1023px;
+  max-height: 1618px; */
   font-family: 'Poppins', sans-serif;
   font-family: 'PT Sans Caption', sans-serif;
   text-align: left;
-  /* background-color: #F9B130; */
+  background-color: #F9B130;
 }
 .firstName {
   text-transform: uppercase;

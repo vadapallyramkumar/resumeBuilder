@@ -17,7 +17,7 @@ function Page6(props) {
                     <hr className='mt-0'/>
                     <div className='row'>
                         <div className='col-12'>
-                            <textarea minLength='100' maxLength='400'
+                            <textarea minLength='100'
                                 value={overview} onChange={(event) => setoverview(event.target.value)} 
                                 className='my-4' style={{width: '100%', padding: '10px', fontSize: '0.8rem', height: '150px', border: '1px solid black', borderRadius: '5px'}}></textarea>
                         </div>

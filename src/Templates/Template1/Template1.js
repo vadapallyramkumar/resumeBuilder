@@ -6,9 +6,8 @@ function Template1(props) {
     return (
         <div className='capturepage1' id='captureContainer1'>
                 <div className='row h-100'>
-
                     {/* Left side Bar */}
-                    <div className='col-4 h-100' style={{ backgroundColor: 'lightblue' }}>
+                    <div className='col-4 '>
                         <h2 className='firstName mx-3 mt-5 mb-2'>{props.page1Details.FirstName}</h2>
                         <h3 className='secondName mx-3 pb-5 '>{props.page1Details.SecondName}</h3>
                         <div className='list py-4'>

@@ -28,7 +28,7 @@ function Page4(props) {
                         <p className='text-center m-0'>Experience 1</p>
                         <div className='col-6 mt-3'>
                             <div className="input-group mb-3">
-                                <input type="text" required className="form-control br-0" minLength="1" maxLength="100" 
+                                <input type="text" required className="form-control br-0" minLength="1" 
                                 value={experience.experienceOrg} onChange={(event) => setexperience({ ...experience, 'experienceOrg': event.target.value })} 
                                 placeholder="Institute/Organisation" />
                                 <div className="input-group-append">
@@ -49,7 +49,7 @@ function Page4(props) {
                         </div>
                         <div className='col-6 mt-3'>
                             <div className="input-group mb-3">
-                                <input type="text" required className="form-control br-0" minLength="1" maxLength="100"  placeholder="Position" 
+                                <input type="text" required className="form-control br-0" minLength="1" placeholder="Position" 
                                 value={experience.experiencePosition} onChange={(event) => setexperience({ ...experience, 'experiencePosition': event.target.value })} />
                                 <div className="input-group-append">
                                     <span className="input-group-text" id="basic-addon2">
@@ -60,7 +60,7 @@ function Page4(props) {
                         </div>
                         <div className='col-12'>
                             <div className="input-group description mb-4">
-                                <input type="text" required className="form-control br-0" minLength="1" maxLength="450"  placeholder="Description" 
+                                <input type="text" required className="form-control br-0" minLength="1" placeholder="Description" 
                                 value={experience.experienceDescription} onChange={(event) => setexperience({ ...experience, 'experienceDescription': event.target.value })} />
                                 <div className="input-group-append">
                                     <span className="input-group-text" id="basic-addon2">
@@ -73,7 +73,7 @@ function Page4(props) {
                         <p className='text-center m-0'>Experience 2</p>
                         <div className='col-6 mt-3'>
                             <div className="input-group mb-3">
-                                <input type="text" required className="form-control br-0" minLength="1" maxLength="100" 
+                                <input type="text" required className="form-control br-0" minLength="1"
                                 value={experience.experience2Org} onChange={(event) => setexperience({ ...experience, 'experience2Org': event.target.value })} 
                                 placeholder="Institute/Organisation" />
                                 <div className="input-group-append">
@@ -94,7 +94,7 @@ function Page4(props) {
                         </div>
                         <div className='col-6 mt-3'>
                             <div className="input-group mb-3">
-                                <input type="text" required className="form-control br-0" minLength="1" maxLength="100"  placeholder="Position" 
+                                <input type="text" required className="form-control br-0" minLength="1"  placeholder="Position" 
                                 value={experience.experience2Position} onChange={(event) => setexperience({ ...experience, 'experience2Position': event.target.value })} />
                                 <div className="input-group-append">
                                     <span className="input-group-text" id="basic-addon2">
@@ -105,7 +105,7 @@ function Page4(props) {
                         </div>
                         <div className='col-12'>
                             <div className="input-group mb-4 description">
-                                <input type="text" required className="form-control br-0" minLength="1" maxLength="450"  placeholder="Description" 
+                                <input type="text" required className="form-control br-0" minLength="1"  placeholder="Description" 
                                 value={experience.experience2Description} onChange={(event) => setexperience({ ...experience, 'experience2Description': event.target.value })} />
                                 <div className="input-group-append">
                                     <span className="input-group-text" id="basic-addon2">

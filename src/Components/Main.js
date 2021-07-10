@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../Assets/Styles/Main.css'
 import Page1 from './Page1'
 import Template1 from '../Templates/Template1/Template1'
+import Template2 from '../Templates/Template2/Template2'
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import Logo from '../Assets/Images/Logo.png'
@@ -63,7 +64,8 @@ function Main() {
                 'personaldetails' : details,
             });
         } else {
-            alert('Enter required details !')
+            snackbar()
+            // alert('Enter required details !')
         }
         
     }
@@ -81,7 +83,7 @@ function Main() {
                 'EducationalDetails' : EducationalDetails,
             });
         } else {
-            alert('Enter required details !')
+            snackbar();
         }
     }
     const page3Validation = (projects) => {
@@ -91,7 +93,7 @@ function Main() {
                 'projects' : projects,
             });
         } else {
-            alert('Enter required details !')
+            snackbar();
         }
     }
     const page4Validation = (details) => {
@@ -109,7 +111,7 @@ function Main() {
                 'interests': interests
             });
         } else {
-            alert('Enter required details !')
+            snackbar();
         }
     }
     const page6Validation = (overview) => {
@@ -119,7 +121,7 @@ function Main() {
                 'overview' : overview,
             });
         } else {
-            alert('Please enter overview!!!');
+            snackbar();
         }
     }
     const page7Validation = (page) => {
@@ -128,21 +130,50 @@ function Main() {
         }
     }
 
+    function snackbar() {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+
     const handlePdf = (page) => {
-        html2canvas(document.getElementById(page), { allowTaint: true, useCORS: true }).then(function (canvas) {
-            canvas.toBlob(function (blob) {
-                var wid;
-                var hgt;
-                var img = canvas.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream', wid = canvas.width, hgt = canvas.height);
-                console.log(img);
-                var hratio = hgt / wid
-                var doc = new jsPDF('p', 'px', 'a4');
-                var width = doc.internal.pageSize.width;
-                var height = width * hratio
-                doc.addImage(img, 'JPEG', 10, 10, width - 20, height - 20);
-                doc.save(`${allDetails.personaldetails.FirstName}.pdf`);
-            });
+        var elem = document.getElementById(page);
+        var width = window.getComputedStyle(elem, null).getPropertyValue("width").replace('px', '');
+        var height = window.getComputedStyle(elem, null).getPropertyValue("height").replace('px', '');
+        var HTML_Width = Number(width);
+        var HTML_Height = Number(height);
+        var top_left_margin = 15;
+        var PDF_Width = HTML_Width + (top_left_margin * 2);
+        var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
+        var canvas_image_width = HTML_Width;
+        var canvas_image_height = HTML_Height;
+        var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+        html2canvas(document.getElementById(page), { allowTaint: true }).then(function (canvas) {
+            canvas.getContext('2d');
+            console.log(canvas.height + "  " + canvas.width);
+            var imgData = canvas.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream');
+            const pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
+            pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+            for (var i = 1; i <= totalPDFPages; i++) {
+                pdf.addPage([PDF_Width, PDF_Height]);
+                pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height * i) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
+            }
+            pdf.save(`${allDetails.personaldetails.FirstName}.pdf`);
         });
+        // html2canvas(document.getElementById(page), { allowTaint: true, useCORS: true }).then(function (canvas) {
+        //     canvas.toBlob(function (blob) {
+        //         var wid;
+        //         var hgt;
+        //         var img = canvas.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream', wid = canvas.width, hgt = canvas.height);
+        //         console.log(img);
+        //         var hratio = hgt / wid
+        //         var doc = new jsPDF('p', 'px', 'a4');
+        //         var width = doc.internal.pageSize.width;
+        //         var height = width * hratio
+        //         doc.addImage(img, 'JPEG', 10, 10, width - 20, height - 20);
+        //         doc.save(`${allDetails.personaldetails.FirstName}.pdf`);
+        //     });
+        // });
     };
 
     return (
@@ -167,6 +198,10 @@ function Main() {
         {
             currentPage === 7 && <Template1 page1Details={allDetails.personaldetails} skills={allDetails.skills} interests={allDetails.interests} overview={allDetails.overview} EducationalDetails={allDetails.EducationalDetails} projects={allDetails.projects} experience={allDetails.experience} />
         }
+        {
+            currentPage === 7 && <Template2 page1Details={allDetails.personaldetails} skills={allDetails.skills} interests={allDetails.interests} overview={allDetails.overview} EducationalDetails={allDetails.EducationalDetails} projects={allDetails.projects} experience={allDetails.experience} />
+        }
+        <div id="snackbar">Enter required details !</div>
         </>
     )
 }

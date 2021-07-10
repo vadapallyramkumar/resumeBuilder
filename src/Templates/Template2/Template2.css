@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+.template-two {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.15rem;
+}
+.bold {
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.sm-bold {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.t2-firstName {
+    text-transform: uppercase;
+}
+.highlight {
+    color: #374457;
+}
+.text-right {
+    text-align: right;
+}
+.inclin {
+    font-style: italic;
+}
+.fs-d {
+    font-size: 1rem;
+}
+.strip {
+    background-color: #374457;
+    height: auto;
+    color: white;
+}
+.strip ul {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+}
+.strip ul li {
+    float: left;
+    padding: 0 10px;
+    line-height: 50px;
+}
+.strip label {
+    float: left;
+}
+.strip p {
+    margin: 0;
+    float: right;
+}
+
+.t2-skills ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.t2-skills ul li {
+    display: inline-block;
+    width: 33.3%;
+}

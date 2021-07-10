@@ -60,7 +60,7 @@ function Page2(props) {
                         </div>
                         <div className='col-12'>
                             <div className="input-group w-100 mb-4 h-4">
-                                <input type="text" required className="form-control" minLength="1" maxLength="280" value={EducationalDetails.HigherDescription} onChange={(event) => setEducationalDetails({ ...EducationalDetails, 'HigherDescription': event.target.value })} placeholder="Description *" />
+                                <input type="text" required className="form-control" minLength="1" value={EducationalDetails.HigherDescription} onChange={(event) => setEducationalDetails({ ...EducationalDetails, 'HigherDescription': event.target.value })} placeholder="Description *" />
                             </div>
                         </div>
                         <hr />
@@ -97,7 +97,7 @@ function Page2(props) {
                         </div>
                         <div className='col-12'>
                             <div className="input-group w-100 mb-3 h-4">
-                                <input type="text" required className="form-control" minLength="1" maxLength="280" value={EducationalDetails.SchoolDescription} onChange={(event) => setEducationalDetails({ ...EducationalDetails, 'SchoolDescription': event.target.value })} placeholder="Description *" />
+                                <input type="text" required className="form-control" minLength="1" value={EducationalDetails.SchoolDescription} onChange={(event) => setEducationalDetails({ ...EducationalDetails, 'SchoolDescription': event.target.value })} placeholder="Description *" />
                             </div>
                         </div>
                         <div className='col-6 back-btn mb-2'>
