@@ -179,6 +179,7 @@ function Main() {
     return (
         <>
         <div className='layered-container'>
+            <h4>Resume Builder !</h4>
             <div className='MainContainer'>
                 <div className='row w-100 h-100 m-0'>
                     <div className='col-4 p-0 left'>
